@@ -78,7 +78,7 @@
             overflow: hidden;
         }
 
-        /* 배경 비디오 스타일 (화질 보정) */
+        /* ✨ [밝기 개선] 브라우저 필터를 통해 영상 밝기(115%)와 대비(105%)를 자체 업그레이드 */
         .video-background {
             position: absolute;
             top: 0;
@@ -88,25 +88,24 @@
             object-fit: cover;
             z-index: 1;
             image-rendering: -webkit-optimize-contrast;
+            filter: brightness(1.15) contrast(1.05); 
         }
 
-        /* ✨ 격자 패턴은 유지하되, 밝기를 대폭 끌어올린 투명 필터 */
+        /* 미세 패턴 레이어 (영상이 밝아졌으므로 패턴 투명도를 0.1로 더 맑게 낮춤) */
         .video-overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            /* 점박이 패턴을 아주 미세하고 투명하게 축소 (rgba 0.4 -> 0.15로 밝게 변경) */
-            background-image: radial-gradient(rgba(0, 0, 0, 0.15) 15%, transparent 15%);
+            background-image: radial-gradient(rgba(0, 0, 0, 0.1) 15%, transparent 15%);
             background-size: 3px 3px;
-            /* 배경 암전 농도를 대폭 낮춤 (rgba 0.5 -> 0.15로 영상 자체의 빛을 살림) */
-            background-color: rgba(11, 15, 25, 0.15);
+            background-color: rgba(11, 15, 25, 0.05); /* 차단막을 거의 제로에 가깝게 걷어냄 */
             background-blend-mode: overlay;
             z-index: 2;
         }
 
-        /* 글씨가 묻히지 않을 정도로만 얇은 그라데이션 베일 추가 */
+        /* 영상이 많이 밝아졌기 때문에 글자가 있는 왼쪽 아래 영역만 부드러운 음영 그라데이션 적용 */
         .video-overlay::after {
             content: '';
             position: absolute;
@@ -114,8 +113,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            /* 왼쪽 텍스트 영역만 살짝 잡아주고 오른쪽은 완전히 투명하게(0.1) 처리 */
-            background: linear-gradient(135deg, rgba(11, 15, 25, 0.5) 30%, rgba(11, 15, 25, 0.1) 100%);
+            background: linear-gradient(135deg, rgba(11, 15, 25, 0.45) 25%, transparent 80%);
             z-index: 2;
         }
 
@@ -124,8 +122,8 @@
             position: relative;
             z-index: 3;
             max-width: 700px;
-            /* 밝아진 배경에 대비해 글씨에 은은한 그림자 효과를 주어 가독성 확보 */
-            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            /* 밝아진 영상 배경에 맞춰 글씨가 묻히지 않도록 이중 그림자 처리(고급 가독성 기법) */
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7), 0 4px 20px rgba(0, 0, 0, 0.4);
         }
 
         .hero h1 {
@@ -141,7 +139,7 @@
 
         .hero p {
             font-size: 18px;
-            color: #ffffff; /* 가독성을 위해 살짝 더 밝은 흰색으로 변경 */
+            color: #ffffff; 
             margin-bottom: 40px;
         }
 
@@ -154,12 +152,14 @@
             font-weight: 600;
             border-radius: 4px;
             transition: transform 0.3s, background-color 0.3s;
-            text-shadow: none;
+            text-shadow: none; /* 버튼 글씨는 그림자 제외 */
+            box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3); /* 버튼 자체에 은은한 오렌지 광채 부여 */
         }
 
         .cta-btn:hover {
             background-color: #e05e00;
             transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 107, 0, 0.5);
         }
 
         /* 공통 섹션 스타일 */
