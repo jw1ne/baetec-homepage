@@ -78,7 +78,6 @@
             overflow: hidden;
         }
 
-        /* 배경 비디오 스타일 */
         .video-background {
             position: absolute;
             top: 0;
@@ -89,7 +88,6 @@
             z-index: 1;
         }
 
-        /* 영상을 어둡게 만들어 글씨를 잘 보이게 하는 오버레이 */
         .video-overlay {
             position: absolute;
             top: 0;
@@ -100,7 +98,6 @@
             z-index: 2;
         }
 
-        /* 콘텐츠가 영상 위에 뜨도록 설정 */
         .hero-content {
             position: relative;
             z-index: 3;
@@ -170,6 +167,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
+            margin-bottom: 60px;
         }
 
         .about-card {
@@ -197,6 +195,71 @@
             color: var(--text-sub);
             margin-top: 8px;
             font-weight: 400;
+        }
+
+        /* 🏅 신뢰 및 인증서 섹션 디자인 추가 */
+        .cert-title-sub {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: #cbd5e1;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .cert-card {
+            background-color: #0e1320;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--point-color);
+        }
+
+        .cert-img-wrapper {
+            width: 100%;
+            height: 380px; /* 인증서 세로 비율 확보 */
+            background-color: #1e293b;
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cert-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* 이미지 찌그러짐 방지 */
+            background-color: #ffffff; /* 인증서 배경 흰색 처리 */
+            opacity: 0.9;
+            transition: opacity 0.3s;
+        }
+
+        .cert-card:hover .cert-img-wrapper img {
+            opacity: 1;
+        }
+
+        .cert-card h4 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+
+        .cert-card p {
+            font-size: 14px;
+            color: var(--text-sub);
         }
 
         /* 제조 물품 (제품 소개) */
@@ -297,6 +360,7 @@
 
     <section id="about">
         <h2 class="section-title">Corporate Overview</h2>
+        
         <div class="about-grid">
             <div class="about-card">
                 <h3>Company</h3>
@@ -317,6 +381,24 @@
                 <h3>Certification</h3>
                 <p>ISO 9001 & Main-Biz</p>
                 <span>중기간경쟁물품 직접생산 확인 완료</span>
+            </div>
+        </div>
+
+        <h3 class="cert-title-sub">Proven Technology & Trust</h3>
+        <div class="cert-grid">
+            <div class="cert-card">
+                <div class="cert-img-wrapper">
+                    <img src="비에이텍사진_02.png" alt="경영혁신형 중소기업 확인서">
+                </div>
+                <h4>Main-Biz 인증</h4>
+                <p>중소벤처기업부 장관 인정 경영혁신형 중소기업</p>
+            </div>
+            <div class="cert-card">
+                <div class="cert-img-wrapper">
+                    <img src="비에이텍사진01.png" alt="강원도지사 표창장">
+                </div>
+                <h4>강원도지사 표창</h4>
+                <p>지역 산업 발전 및 유체기계 기술 혁신 공로 표창</p>
             </div>
         </div>
     </section>
