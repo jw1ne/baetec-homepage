@@ -5,13 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>비에이텍 주식회사 - Blue Advanced Technology</title>
     <style>
-        /* 한화에어로스페이스 스타일 톤앤매너 정의 */
         :root {
-            --bg-primary: #0b0f19;       /* 딥 네이비 블랙 */
-            --bg-secondary: #161c2d;     /* 카드 및 섹션 배경 */
-            --text-main: #ffffff;        /* 메인 텍스트 */
-            --text-sub: #94a3b8;         /* 서브 텍스트 */
-            --point-color: #ff6b00;      /* 한화 오렌지 포인트 */
+            --bg-primary: #0b0f19;       
+            --bg-secondary: #161c2d;     
+            --text-main: #ffffff;        
+            --text-sub: #94a3b8;         
+            --point-color: #ff6b00;      
             --border-color: #2d3748;
         }
 
@@ -28,7 +27,6 @@
             line-height: 1.6;
         }
 
-        /* 네비게이션 바 */
         header {
             display: flex;
             justify-content: space-between;
@@ -66,7 +64,6 @@
             color: var(--point-color);
         }
 
-        /* 🎬 비디오 배경 히어로 섹션 */
         .hero {
             height: 100vh;
             display: flex;
@@ -78,7 +75,6 @@
             overflow: hidden;
         }
 
-        /* 배경 비디오 스타일 (화질 개선 최적화 적용) */
         .video-background {
             position: absolute;
             top: 0;
@@ -90,23 +86,19 @@
             image-rendering: -webkit-optimize-contrast;
         }
 
-        /* ✨ 영상 화질 저하를 숨기고 대기업 감성을 내는 격자 패턴 오버레이 */
         .video-overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            /* 1단계: 미세한 점박이 도트 매트릭스 필터 레이어 구성 */
             background-image: radial-gradient(rgba(0, 0, 0, 0.4) 15%, transparent 15%);
             background-size: 3px 3px;
-            /* 2단계: 뒤에 딥 네이비 암전 그라데이션 조합 */
             background-color: rgba(11, 15, 25, 0.5);
             background-blend-mode: overlay;
             z-index: 2;
         }
 
-        /* 부드러운 그라데이션으로 한번 더 글자 가독성 보호 */
         .video-overlay::after {
             content: '';
             position: absolute;
@@ -118,7 +110,6 @@
             z-index: 2;
         }
 
-        /* 콘텐츠가 영상 위에 뜨도록 설정 */
         .hero-content {
             position: relative;
             z-index: 3;
@@ -158,7 +149,6 @@
             transform: translateY(-3px);
         }
 
-        /* 공통 섹션 스타일 */
         section {
             padding: 100px 8%;
             position: relative;
@@ -183,7 +173,6 @@
             background-color: var(--point-color);
         }
 
-        /* 회사 개요 양식 */
         .about-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -218,7 +207,252 @@
             font-weight: 400;
         }
 
-        /* 🏅 신뢰 및 인증서 섹션 */
         .cert-title-sub {
             font-size: 20px;
-            font-
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: #cbd5e1;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .cert-card {
+            background-color: #0e1320;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--point-color);
+        }
+
+        .cert-img-wrapper {
+            width: 100%;
+            height: 380px;
+            background-color: #1e293b;
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cert-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background-color: #ffffff;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+        }
+
+        .cert-card:hover .cert-img-wrapper img {
+            opacity: 1;
+        }
+
+        .cert-card h4 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+
+        .cert-card p {
+            font-size: 14px;
+            color: var(--text-sub);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background-color: var(--bg-secondary);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: border-color 0.3s;
+        }
+
+        .product-card:hover {
+            border-color: var(--point-color);
+        }
+
+        .product-img-placeholder {
+            height: 200px;
+            background: linear-gradient(45deg, #1e293b, #0f172a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-sub);
+            font-weight: 600;
+        }
+
+        .product-info {
+            padding: 25px;
+        }
+
+        .product-info h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .product-info p {
+            color: var(--text-sub);
+            font-size: 14px;
+        }
+
+        footer {
+            background-color: #060911;
+            padding: 60px 8% 30px 8%;
+            border-top: 1px solid var(--border-color);
+            font-size: 14px;
+            color: var(--text-sub);
+            position: relative;
+            z-index: 10;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 40px;
+        }
+
+        .footer-info p {
+            margin-bottom: 8px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">BAETEC<span>.</span></div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#products">Products</a>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <video class="video-background" autoplay loop muted playsinline preload="auto">
+            <source src="비에이텍 1.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
+        
+        <div class="hero-content">
+            <h1>Blue Advanced<br>Technology <span>BAETEC</span></h1>
+            <p>비에이텍 주식회사는 고효율 모터펌프 및 친환경 진공·부스터 펌프 제조 기술을 바탕으로 대한민국 조달 산업 및 상하수도 시설 확충에 기여하는 프리미엄 유체기계 전문 기업입니다.</p>
+            <a href="#products" class="cta-btn">제조 기술 확인하기</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2 class="section-title">Corporate Overview</h2>
+        
+        <div class="about-grid">
+            <div class="about-card">
+                <h3>Company</h3>
+                <p>비에이텍 주식회사</p>
+                <span>설립일: 2010년 11월 01일</span>
+            </div>
+            <div class="about-card">
+                <h3>CEO</h3>
+                <p>조세연 대표이사</p>
+                <span>품질경영 및 기술 혁신 중심 경영</span>
+            </div>
+            <div class="about-card">
+                <h3>Location</h3>
+                <p>강원 춘천시</p>
+                <span>퇴계공단2길 64 (제2농공단지내)</span>
+            </div>
+            <div class="about-card">
+                <h3>Certification</h3>
+                <p>ISO 9001 & Main-Biz</p>
+                <span>중기간경쟁물품 직접생산 확인 완료</span>
+            </div>
+        </div>
+
+        <h3 class="cert-title-sub">Proven Technology & Trust</h3>
+        <div class="cert-grid">
+            <div class="cert-card">
+                <div class="cert-img-wrapper">
+                    <img src="비에이텍사진_02.png" alt="경영혁신형 중소기업 확인서">
+                </div>
+                <h4>Main-Biz 인증</h4>
+                <p>중소벤처기업부 장관 인정 경영혁신형 중소기업</p>
+            </div>
+            <div class="cert-card">
+                <div class="cert-img-wrapper">
+                    <img src="비에이텍사진01.png" alt="강원도지사 표창장">
+                </div>
+                <h4>강원도지사 표창</h4>
+                <p>지역 산업 발전 및 유체기계 기술 혁신 공로 표창</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" style="background-color: #0f1322;">
+        <h2 class="section-title">Core Products</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-img-placeholder">MOTOR PUMP SYSTEM</div>
+                <div class="product-info">
+                    <h3>모터펌프</h3>
+                    <p>안정적인 유체 수송 인프라를 구축하는 비에이텍의 주력 생산 물품입니다.</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img-placeholder">VACUUM PUMP SYSTEM</div>
+                <div class="product-info">
+                    <h3>전진공동펌프</h3>
+                    <p>정밀 제어 기술이 적용된 중기간경쟁지정 고성능 진공 시스템입니다.</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img-placeholder">BOOSTER PUMP SYSTEM</div>
+                <div class="product-info">
+                    <h3>부스터펌프</h3>
+                    <p>상하수도 시설 및 대형 빌딩의 최적 수압 유지를 위한 급수 펌프 솔루션입니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <p><strong>비에이텍(주)</strong> | 대표이사: 조세연 | 사업자등록번호: 221-81-42625</p>
+                <p>본사 및 공장: 강원도 춘천시 퇴계공단2길 64 (퇴계제2농공단지내)</p>
+                <p>TEL: 033) 264-9243 | FAX: 033) 251-5747</p>
+            </div>
+            <div>
+                <p><strong>인증 현황</strong></p>
+                <p style="font-size: 12px; color: #64748b; margin-top: 5px;">한국펌프공업협동조합 회원사<br>강원도지사 표창장 수상</p>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 BAETEC Co., Ltd. All Rights Reserved. Created via AI Smart Work.
+        </div>
+    </footer>
+
+</body>
+</html>
